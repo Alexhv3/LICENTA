@@ -8,30 +8,34 @@
              HorizontalAlignment="Stretch"
              HorizontalContentAlignment="Stretch"
              Background="Aqua">
-    <Grid>
-        <Grid.ColumnDefinitions>
-            <ColumnDefinition Width="*" />
-            <ColumnDefinition Width="*" />
-        </Grid.ColumnDefinitions>
+    <Border Padding="20 10">
+        <Grid>
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="*" />
+                <ColumnDefinition Width="*" />
+            </Grid.ColumnDefinitions>
 
-        <Grid Grid.Column="0">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="20" />
-            </Grid.RowDefinitions>
-            
-            <TextBlock Grid.Row="0">Input</TextBlock>
-            <Slider Grid.Row="1" />
+            <Grid Grid.Column="0"
+                  Margin="0 0 10 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="20" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0">Input</TextBlock>
+                <Slider Grid.Row="1" />
+            </Grid>
+
+            <Grid Grid.Column="1"
+                  Margin="10 0 0 0">
+                <Grid.RowDefinitions>
+                    <RowDefinition Height="Auto" />
+                    <RowDefinition Height="20" />
+                </Grid.RowDefinitions>
+
+                <TextBlock Grid.Row="0">Output</TextBlock>
+                <Slider Grid.Row="1" />
+            </Grid>
         </Grid>
-
-        <Grid Grid.Column="1">
-            <Grid.RowDefinitions>
-                <RowDefinition Height="Auto" />
-                <RowDefinition Height="20" />
-            </Grid.RowDefinitions>
-
-            <TextBlock Grid.Row="0">Output</TextBlock>
-            <Slider Grid.Row="1" />
-        </Grid>
-    </Grid>
+    </Border>
 </UserControl>

@@ -24,5 +24,10 @@ namespace DigitalHarmony
         {
             InitializeComponent();
         }
+
+        private void settingsBtn_Click(object sender, RoutedEventArgs e)
+        {
+
+        }
     }
 }
