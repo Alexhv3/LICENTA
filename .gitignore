@@ -1,0 +1,9 @@
+*.png
+*.jpg
+*.jpeg
+*.suo
+*.exe
+
+.vs
+bin
+obj
