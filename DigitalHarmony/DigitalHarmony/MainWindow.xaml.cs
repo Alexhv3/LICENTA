@@ -1,6 +1,10 @@
-﻿using System;
+﻿using DigitalHarmony.Globals;
+using DigitalHarmony.Models;
+using NAudio.Wave;
+using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Management;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows;
@@ -22,7 +26,19 @@ namespace DigitalHarmony
     {
         public MainWindow()
         {
+            this.InitializeAppLogic();
             InitializeComponent();
+        }
+
+        private void InitializeAppLogic()
+        {
+            AudioDevice<WaveInCapabilities> inputDevice = JSONs.Deserialize<AudioDeviceInputModel>(Properties.Settings.Default.InputDevice);
+            inputDevice.Device = WaveIn.GetCapabilities(inputDevice.DeviceNumber);
+
+            AudioDevice<WaveOutCapabilities> outputDevice = JSONs.Deserialize<AudioDeviceOutputModel>(Properties.Settings.Default.OutputDevice);
+            outputDevice.Device = WaveOut.GetCapabilities(outputDevice.DeviceNumber);
+
+            AudioDevices.InstanceInit = new AudioDeviceSingletonModel(inputDevice, outputDevice);
         }
     }
 }

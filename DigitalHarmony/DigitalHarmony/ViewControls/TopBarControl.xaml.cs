@@ -1,4 +1,5 @@
-﻿using System;
+﻿using DigitalHarmony.ViewWindows;
+using System;
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
@@ -13,7 +14,7 @@ using System.Windows.Media.Imaging;
 using System.Windows.Navigation;
 using System.Windows.Shapes;
 
-namespace DigitalHarmony
+namespace DigitalHarmony.ViewControls
 {
     /// <summary>
     /// Interaction logic for TopBarControl.xaml
@@ -27,7 +28,8 @@ namespace DigitalHarmony
 
         private void settingsBtn_Click(object sender, RoutedEventArgs e)
         {
-
+            SettingsWindow settingsWindow = SettingsWindow.Instance;
+            settingsWindow.Show();
         }
     }
 }
